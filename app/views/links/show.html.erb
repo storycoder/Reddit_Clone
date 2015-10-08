@@ -13,7 +13,23 @@
 	</div>
 	<hr>
 
-	<%= link_to 'Back to Links', root_path, class: "btn btn-default" %> <!--  This line of code added as enhancement by Joseph Margolis -->
 <% end %>
+
+<div class="btn group pull-right">
+	<%= link_to like_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+		<span class="glyphicon glyphicon-chevron-up"></span>
+		Upvote
+		<%= @link.get_upvotes.size %>
+	<% end %>
+	<%= link_to dislike_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+		<span class="glyphicon glyphicon-chevron-down"></span>
+		Downvote
+		<%= @link.get_downvotes.size %>
+	<% end %>
+</div>
+
+<%= link_to 'Back to Links', root_path, class: "btn btn-default" %> <!--  This line of code added as enhancement by Joseph Margolis -->
+
+
 
 
